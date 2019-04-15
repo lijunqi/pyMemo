@@ -74,5 +74,15 @@ user = query.get("jerry")
 session.delete(user)
 session.commit()
 
+'''
+Execute SQL
+'''
+sql_cmd = "select * from user1"
+res = session.execute(sql_cmd)
+print("-----------------")
+for user in res:
+    print(user.user_name)
+    print(user.age)
+
 
 session.close()
