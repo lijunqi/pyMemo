@@ -37,3 +37,16 @@ print(t.get_in_name())
 print("name is",t._Teacher__name)   # 输出GG
 t._Teacher__name="AA"               # 被改变了
 print("name is",t._Teacher__name)   # 输出AA
+
+
+class Parent(object):
+    def __init__(self):
+        self._data = "data in parent"
+
+class Child(Parent):
+    def __init__(self):
+        Parent.__init__(self)
+
+ch = Child()
+print(ch._data)
+
